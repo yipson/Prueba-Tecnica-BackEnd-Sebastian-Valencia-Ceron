@@ -31,9 +31,9 @@ public class MesaServiceImp implements MesaService{
 
     //Inserta Mesa a la base de datos
     @Override
-    public void save(Mesa mesa) {
+    public Mesa save(Mesa mesa) {
         mesa.setDisponible(new Character('T'));
-        mesaDao.save(mesa);
+        return mesaDao.save(mesa);
     }
 
 

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioServiceImp implements UsuarioService{
@@ -27,11 +28,11 @@ public class UsuarioServiceImp implements UsuarioService{
 
     //Almacena el Usuario y encripta la contraseña
     @Override
-    public void save(Usuario usuario) {
+    public Usuario save(Usuario usuario) {
         Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
         String hash = argon2.hash(1, 1024, 1, usuario.getPassword());
         usuario.setPassword(hash);
-        usuarioDao.save(usuario);
+        return usuarioDao.save(usuario);
     }
 
     //Obtener Usuario con las credenciales para hacer login
@@ -58,7 +59,10 @@ public class UsuarioServiceImp implements UsuarioService{
         return null;
     }
 
-
+    @Override
+    public Optional<Usuario> findById(Long id){
+        return usuarioDao.findById(id);
+    }
 
 
 }

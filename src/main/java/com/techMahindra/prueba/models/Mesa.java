@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "mesas")
@@ -18,6 +20,12 @@ public class Mesa {
     @Getter @Setter
     @Column(name = "disponible")
     private Character disponible;
+
+    //Foreign Key a entidad Mesa
+    @Getter @Setter
+    @ManyToOne(targetEntity = Usuario.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id", referencedColumnName = "id_jugador")
+    private Optional<Usuario> Usuario;
 
     @Getter @Setter
     @Column(name = "apuesta")

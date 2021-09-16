@@ -10,7 +10,7 @@ public interface MesaService {
 
     List<Mesa> getMesas();
 
-    void save(Mesa mesa);
+    Mesa save(Mesa mesa);
 
     List<Mesa> getMesasDisponibles();
 

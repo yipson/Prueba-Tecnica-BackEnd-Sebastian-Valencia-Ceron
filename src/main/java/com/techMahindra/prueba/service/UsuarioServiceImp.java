@@ -5,7 +5,6 @@ import com.techMahindra.prueba.models.Usuario;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -20,6 +19,7 @@ public class UsuarioServiceImp implements UsuarioService{
     @Autowired
     EntityManager entityManager;
 
+    //Retorna los usuarios
     @Override
     public List<Usuario> getUsuarios() {
         return (List<Usuario>) usuarioDao.findAll();
@@ -34,6 +34,7 @@ public class UsuarioServiceImp implements UsuarioService{
         usuarioDao.save(usuario);
     }
 
+    //Obtener Usuario con las credenciales para hacer login
     @Override
     public Usuario obtenerUsuarioPorCredenciales(Usuario usuario) {
         //Recuperamos usuarios de la base de datos

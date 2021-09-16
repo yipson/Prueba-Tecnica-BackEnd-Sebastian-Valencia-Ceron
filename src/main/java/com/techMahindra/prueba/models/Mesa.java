@@ -19,11 +19,6 @@ public class Mesa {
     @Column(name = "disponible")
     private Character disponible;
 
-//    @Getter @Setter
-////    @ManyToOne
-//    @Column(name = "id_usuario")
-//    private Long idUsuario;
-
     @Getter @Setter
     @Column(name = "apuesta")
     private Double apuesta;

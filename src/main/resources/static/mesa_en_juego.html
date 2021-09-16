@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Juego</title>
+</head>
+<body>
+    <div id="mesaEnJuegoTitulo"></div>
+    <br>
+    <p>Limite de apuesta por persona $10.000</p>
+    <input type="number" placeholder="apuesta..." id="dinero" min="1" max="10000">
+    <br>
+    <p>Apuesta por color: recompensa sera de 1/4 de lo apostado</p>
+    <p>Apuesta por numero: recompensa sera lo apostado menos el 10%</p>
+
+    <p>Selecciona un tipo de apuesta</p>
+    <div>
+        <select name="tipoApuesta" id="tipoApuesta">
+            <option value="Color">Color</option>
+            <option value="Numero">Numero</option>
+        </select>
+    </div>
+    <br>
+
+    <p>selecciona tu apuesta</p>
+    <div id="divApuesta">
+        <select name="apuesta" id="apuesta">
+            <option value="37">Rojo</option>
+            <option value="38">Negro</option>
+        </select>
+    </div>
+    <br>
+    <a onclick="girarRuleta()" href="#">Girar Ruleta</a>
+    <br>
+    <br>
+    <h5>Resultado</h5>
+    <input type="text" readonly="readonly" id="resultado">
+
+    <form>
+        <input type="id">
+        <input type="">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </form>
+
+
+
+  <script src="/js/mesa_en_juego.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    localStorage.clear();
 });
 
 async function iniciarSesion() {
@@ -18,12 +19,14 @@ async function iniciarSesion() {
 
     const respuesta = await request.text();
     const respuestaArray = respuesta.split(',');
+    console.log(respuesta);
     console.log(respuestaArray);
     if (respuesta != 'FAIL'){
         localStorage.token = respuestaArray[0];
         localStorage.idUsuario = respuestaArray[1];
         localStorage.rol = respuestaArray[2]
         localStorage.email = datos.email;
+        localStorage.idMesa = '';
         window.location.href = 'ruletas_disponibles.html'
     } else {
         alert("Credenciales incorrectas, Reintentar");

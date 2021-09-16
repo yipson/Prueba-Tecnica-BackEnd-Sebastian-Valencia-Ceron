@@ -29,9 +29,17 @@ public class Usuario {
     @Column(name = "password")
     private String password;
 
-    //Foreign Key
+    //Foreign Key a entidad Rol
     @Getter @Setter
     @OneToMany(targetEntity = Rol.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_usuario", referencedColumnName = "id")
     private List<Rol> roles;
+
+
+    //Foreign Key a entidad Mesa
+    @Getter @Setter
+    @OneToMany(targetEntity = Mesa.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_jugador", referencedColumnName = "id")
+    private List<Mesa> mesas;
+
 }

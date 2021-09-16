@@ -4,27 +4,34 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
 
     @Id
-    @Column(name = "id")
     @Getter @Setter
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre")
     @Getter @Setter
+    @Column(name = "nombre")
     private String nombre;
 
-
-    @Column(name = "email")
     @Getter @Setter
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "numero")
+
     @Getter @Setter
-    private String numero;
+    @Column(name = "password")
+    private String password;
+
+    //Foreign Key
+    @Getter @Setter
+    @OneToMany(targetEntity = Rol.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_usuario", referencedColumnName = "id")
+    private List<Rol> roles;
 }

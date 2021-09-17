@@ -11,7 +11,7 @@
     
 - El archivo [application.properties](src/main/resources/application.properties) contiene la configuracion necesaria para hacer la conexion a base de datos
 
-- Se utilizo la siguiente [extencion](chrome-extension://aejoelaoggembcahagimdiliamlcdmfm/index.html#requests) de Google Chrome para realizar consultas a los servicios:
+- Se utilizo la siguiente [extencion](chrome-extension://aejoelaoggembcahagimdiliamlcdmfm/index.html#requests) de Google Chrome para realizar consultas a los servicios: chrome-extension://aejoelaoggembcahagimdiliamlcdmfm/index.html#requests
 
 Crear usuarios. PATH = '/api_usuario/create':
 

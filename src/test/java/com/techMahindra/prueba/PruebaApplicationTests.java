@@ -64,17 +64,15 @@ class PruebaApplicationTests {
 
 	@Test
 	public void retornarMesa(){
-		Character disponible = 'T';
+		Character disponibleSi = 'T';
 		Mesa nuevaMesa = new Mesa();
-		nuevaMesa.setDisponible(disponible);
+		nuevaMesa.setDisponible(disponibleSi);
 
 		Mesa mesaCreada = mesaService.save(nuevaMesa);
 
-		Optional<Mesa> mesa = mesaService.getMesaById(mesaCreada.getId());
 
-
-
-
+		assertFalse(mesaCreada.getDisponible().equals(nuevaMesa.getId()));
+		assertTrue(mesaCreada.getDisponible().equals(nuevaMesa.getDisponible()));
 	}
 
 }

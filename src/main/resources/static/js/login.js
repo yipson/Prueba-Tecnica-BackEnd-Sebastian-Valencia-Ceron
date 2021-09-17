@@ -27,7 +27,7 @@ async function iniciarSesion() {
         localStorage.rol = respuestaArray[2]
         localStorage.email = datos.email;
         localStorage.idMesa = '';
-        window.location.href = 'ruletas_disponibles.html'
+        window.location.href = 'mesas_disponibles.html'
     } else {
         alert("Credenciales incorrectas, Reintentar");
     }

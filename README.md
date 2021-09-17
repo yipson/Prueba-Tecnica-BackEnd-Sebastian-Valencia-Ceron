@@ -13,7 +13,7 @@
 
 - Se utilizo la siguiente [extencion](chrome-extension://aejoelaoggembcahagimdiliamlcdmfm/index.html#requests) de Google Chrome para realizar consultas a los servicios:
 
-Json para crear usuarios:
+Crear usuarios. PATH = '/api_usuario/create':
 
 {
   "nombre": "alberto",
@@ -27,10 +27,21 @@ Json para crear usuarios:
 }
 
 
+Listar usuarios. PATH = '/api_usuario/listado'. method = GET
+
+Listar mesas. PATH = '/api_mesa/listado'. method = POST
 
 
+Generar resultado de ruleta. PATH = '/generar_resultado'. method = GET
 
-Json para crear mesas
+
+Listar todas las mesas. PATH = '/api_mesa/listado'. method = GET
+
+Listar mesas disponibles. PATH = '/mesas/disponibles'. method = GET
+
+Retornar mesa en juego. PATH = '/mesa_actual/{id}'. method = GET
+
+Crear mesas. PATH = '/api_mesa/create'. method = POST
 
 {
 "id": null,

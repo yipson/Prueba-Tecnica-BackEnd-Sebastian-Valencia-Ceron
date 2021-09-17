@@ -28,15 +28,17 @@ Json para crear usuarios:
 
 
 
+
+
 Json para crear mesas
 
 {
-  "id": 8,
-  "disponible": "T",
-  "apuesta": '',
-  "resultadoUsuario": '',
-  "resultadoFinal": '',
-  "recaudoMesa": ,
-  "recaudoUsuario": ,
-  "usuarioGano": ''
+"id": null,
+"disponible": "T",
+"apuesta": null,
+"resultadoUsuario": null,
+"resultadoFinal": null,
+"recaudoMesa": null,
+"recauUsuario": null,
+"usuarioGano": null
 }

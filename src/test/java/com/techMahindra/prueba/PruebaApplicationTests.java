@@ -1,5 +1,6 @@
 package com.techMahindra.prueba;
 
+import com.techMahindra.prueba.domains.Mesa;
 import com.techMahindra.prueba.domains.Rol;
 import com.techMahindra.prueba.domains.Ruleta;
 import com.techMahindra.prueba.domains.Usuario;
@@ -11,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
@@ -40,7 +42,12 @@ class PruebaApplicationTests {
 
 		Usuario usuarioRetorno = usuarioService.save(usuario);
 
+
+
 		assertTrue(usuarioRetorno.getPassword().equalsIgnoreCase(usuario.getPassword()));
+		assertTrue(usuarioRetorno.getNombre().equals(usuario.getNombre()));
+		assertTrue(usuarioRetorno.getEmail().equals(usuario.getEmail()));
+		assertTrue(usuarioRetorno.getRoles().equals(usuario.getRoles()));
 
 	}
 
@@ -52,6 +59,22 @@ class PruebaApplicationTests {
 		Ruleta resultado2 = mesaService.getResultado();
 
 		assertFalse(resultado1.toString().equals(resultado2.toString()));
+	}
+
+
+	@Test
+	public void retornarMesa(){
+		Character disponible = 'T';
+		Mesa nuevaMesa = new Mesa();
+		nuevaMesa.setDisponible(disponible);
+
+		Mesa mesaCreada = mesaService.save(nuevaMesa);
+
+		Optional<Mesa> mesa = mesaService.getMesaById(mesaCreada.getId());
+
+
+
+
 	}
 
 }

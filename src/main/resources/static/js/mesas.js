@@ -5,7 +5,8 @@ $(document).ready(function() {
 });
 
 async function agregarMesa(){
-    const request = await fetch('/api_mesa/create', {
+    const path = '/api_mesa/create'+localStorage.rol;
+    const request = await fetch(path, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',

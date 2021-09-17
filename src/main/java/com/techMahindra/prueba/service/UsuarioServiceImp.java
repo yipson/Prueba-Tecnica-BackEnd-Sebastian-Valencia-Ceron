@@ -1,7 +1,7 @@
 package com.techMahindra.prueba.service;
 
 import com.techMahindra.prueba.dao.UsuarioDao;
-import com.techMahindra.prueba.models.Usuario;
+import com.techMahindra.prueba.domains.Usuario;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;

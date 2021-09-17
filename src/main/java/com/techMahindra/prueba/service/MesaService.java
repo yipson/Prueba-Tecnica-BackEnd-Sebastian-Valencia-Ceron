@@ -1,7 +1,7 @@
 package com.techMahindra.prueba.service;
 
-import com.techMahindra.prueba.models.Mesa;
-import com.techMahindra.prueba.models.Ruleta;
+import com.techMahindra.prueba.domains.Mesa;
+import com.techMahindra.prueba.domains.Ruleta;
 
 import java.util.List;
 import java.util.Optional;

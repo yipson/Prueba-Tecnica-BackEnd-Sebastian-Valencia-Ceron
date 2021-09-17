@@ -1,8 +1,6 @@
 package com.techMahindra.prueba.controllers;
 
-import com.techMahindra.prueba.dao.UsuarioDao;
-import com.techMahindra.prueba.models.Rol;
-import com.techMahindra.prueba.models.Usuario;
+import com.techMahindra.prueba.domains.Usuario;
 import com.techMahindra.prueba.service.RolService;
 import com.techMahindra.prueba.service.UsuarioService;
 import com.techMahindra.prueba.util.JWTUtil;

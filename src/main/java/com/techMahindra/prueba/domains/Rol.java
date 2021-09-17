@@ -1,4 +1,4 @@
-package com.techMahindra.prueba.models;
+package com.techMahindra.prueba.domains;
 
 import lombok.Getter;
 import lombok.Setter;

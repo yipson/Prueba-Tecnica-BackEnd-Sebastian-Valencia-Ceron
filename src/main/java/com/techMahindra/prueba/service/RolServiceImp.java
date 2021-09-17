@@ -1,7 +1,7 @@
 package com.techMahindra.prueba.service;
 
-import com.techMahindra.prueba.models.Rol;
-import com.techMahindra.prueba.models.Usuario;
+import com.techMahindra.prueba.domains.Rol;
+import com.techMahindra.prueba.domains.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

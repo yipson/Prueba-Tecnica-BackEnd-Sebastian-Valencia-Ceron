@@ -1,11 +1,9 @@
-package com.techMahindra.prueba.models;
+package com.techMahindra.prueba.domains;
 
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Optional;
 
 @Entity
 @Table(name = "mesas")

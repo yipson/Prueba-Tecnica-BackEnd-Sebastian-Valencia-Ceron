@@ -1,7 +1,7 @@
 package com.techMahindra.prueba.controllers;
 
-import com.techMahindra.prueba.models.Mesa;
-import com.techMahindra.prueba.models.Ruleta;
+import com.techMahindra.prueba.domains.Mesa;
+import com.techMahindra.prueba.domains.Ruleta;
 import com.techMahindra.prueba.service.MesaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,13 +17,13 @@ public class MesaController {
     private MesaService mesaService;
 
     //Retorna listado de Mesas PATH: localhost:8080/api_mesa/listado
-    @RequestMapping(value="/api_mesa/listado")
+    @RequestMapping(value="/api_mesa/listado", method = RequestMethod.GET)
     public List<Mesa> getMesas(){
         return (List<Mesa>) mesaService.getMesas();
     }
 
     //Inserta mesa, retorna mesa insertada PATH: localhost:8080/api_mesa/create
-    @PostMapping(value = "/api_mesa/create")
+    @RequestMapping(value = "/api_mesa/create", method = RequestMethod.POST)
     public void createMesa(@RequestBody Mesa mesa){
         mesaService.save(mesa);
     }
@@ -44,7 +44,7 @@ public class MesaController {
 
 
     //Retorna la apuesta aleatoria PATH: localhost:8080//generar_resultado
-    @RequestMapping(value="/generar_resultado", method = RequestMethod.POST)
+    @RequestMapping(value="/generar_resultado", method = RequestMethod.GET)
     public Ruleta getResultado(){
         return mesaService.getResultado();
     }
@@ -52,7 +52,7 @@ public class MesaController {
 
     //Actualiza el registro de mesa al haber culminado el juego
     //Metodo en revision
-    @RequestMapping(value="/guardar_resultado/{idUsuario}", method = RequestMethod.POST)
+    @RequestMapping(value="/guardar_resultado/", method = RequestMethod.POST)
     public void updateMesa(@RequestBody Mesa mesa,  @PathVariable Long idUsuario){
         mesaService.save(mesa);
     }

@@ -1,10 +1,9 @@
 package com.techMahindra.prueba.service;
 
 import com.techMahindra.prueba.dao.MesaDao;
-import com.techMahindra.prueba.models.Mesa;
-import com.techMahindra.prueba.models.Ruleta;
+import com.techMahindra.prueba.domains.Mesa;
+import com.techMahindra.prueba.domains.Ruleta;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoProperties;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -65,11 +64,7 @@ public class MesaServiceImp implements MesaService{
         String color = "";
         Ruleta resultado = new Ruleta();
 
-        if(numero%2 == 0 || numero==0){
-            color = "Rojo";
-        } else {
-            color = "Negro";
-        }
+        color = (numero%2 == 0 || numero==0) ? "Rojo": "Negro";
 
         resultado.setNumero(numero);
         resultado.setColor(color);

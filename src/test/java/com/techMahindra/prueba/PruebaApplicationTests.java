@@ -1,8 +1,8 @@
 package com.techMahindra.prueba;
 
-import com.techMahindra.prueba.models.Mesa;
-import com.techMahindra.prueba.models.Rol;
-import com.techMahindra.prueba.models.Usuario;
+import com.techMahindra.prueba.domains.Rol;
+import com.techMahindra.prueba.domains.Ruleta;
+import com.techMahindra.prueba.domains.Usuario;
 import com.techMahindra.prueba.service.MesaService;
 import com.techMahindra.prueba.service.UsuarioService;
 import org.junit.jupiter.api.Test;
@@ -11,8 +11,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
+import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 @SpringBootTest
@@ -45,6 +45,13 @@ class PruebaApplicationTests {
 	}
 
 
-	//
+	@Test
+	public void generarResultadoRuleta(){
+
+		Ruleta resultado1 = mesaService.getResultado();
+		Ruleta resultado2 = mesaService.getResultado();
+
+		assertFalse(resultado1.toString().equals(resultado2.toString()));
+	}
 
 }
